@@ -1,0 +1,7 @@
+; Practical 7 : CLA, CMA, CME, HLT
+LDA NUM
+CLA
+CMA
+CME
+HLT
+NUM: .data 1 25
