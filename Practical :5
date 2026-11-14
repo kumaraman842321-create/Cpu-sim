@@ -1,0 +1,60 @@
+; Practical 5 : Logical operations
+INP
+STA A
+INP
+STA B
+; AND = A . B
+LDA A
+AND B
+STA RAND
+OUT
+; OR = (A' . B')'
+LDA B
+CMA
+STA NB
+LDA A
+CMA
+STA NA
+LDA NA
+AND NB
+CMA
+STA ROR
+OUT
+; NOT A
+LDA A
+CMA
+STA NOTA
+OUT
+; NOT B
+LDA B
+CMA
+STA NOTB
+OUT
+; XOR = (A+B).(A.B)'
+LDA RAND
+CMA
+AND ROR
+STA RXOR
+OUT
+; NOR = (A+B)'
+LDA ROR
+CMA
+STA RNOR
+OUT
+; NAND = (A.B)'
+LDA RAND
+CMA
+STA RNAND
+OUT
+HLT
+A: .data 1 0
+B: .data 1 0
+NA: .data 1 0
+NB: .data 1 0
+RAND: .data 1 0
+ROR: .data 1 0
+RXOR: .data 1 0
+RNOR: .data 1 0
+RNAND: .data 1 0
+NOTA: .data 1 0
+NOTB: .data 1 0
