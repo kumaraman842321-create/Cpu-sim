@@ -1,0 +1,28 @@
+# Practical 2: Create Fetch Routine
+
+**Aim:** To create fetch and decode routine of instruction cycle
+
+**Theory:**
+Every instruction cycle starts with fetch:
+- T0: AR <- PC (Address of next instruction to AR)
+- T1: IR <- M[AR], PC <- PC+1 (Read instruction, increment PC)
+- T2: D0..D7 <- Decode IR(12-14), AR <- IR(0-11), I <- IR(15) (Decode opcode)
+
+**Fetch Sequence in CPU Sim (Ctrl+Y):**
+1. PC->AR
+2. M[AR]->IR
+3. PC+1->PC
+4. IR(0-11)->AR
+5. decode-IR
+
+**Procedure:**
+1. Open BasicComputer.cpu
+2. Modify -> Fetch Sequence (Ctrl+Y)
+3. Drag above 5 microinstructions in order
+4. Save machine (Ctrl+B)
+5. Test with P03_ADD.a in Debug mode (Ctrl+D) -> Step by Micro 5 times
+
+**Observations:**
+After 5 micro steps, PC increments, IR holds instruction, AR holds address field.
+
+**Result:** Fetch routine created and verified.
