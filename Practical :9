@@ -1,0 +1,8 @@
+; Practical 9 : CIR, CIL - Circulate
+LDA NUM
+CIR
+CIR
+CIL
+CIL
+HLT
+NUM: .data 1 9
