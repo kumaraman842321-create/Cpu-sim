@@ -1,1 +1,22 @@
+# Practical 1: Create a Machine
 
+**Aim:** To create Mano's Basic Computer architecture in CPU Sim
+
+**Hardware Modules Created:**
+- Registers: DR(16-bit), AR(12-bit), AC(16-bit), IR(16-bit), PC(12-bit)
+- Condition Bits: E(1-bit carry), S(1-bit halt), TMP(1-bit scratch)
+- Memory: RAM 4096 words x 16-bit
+
+**Microinstructions Created (33 total):**
+- Transfer: PC->AR, IR(0-11)->AR, DR->AC, AC->DR etc.
+- Memory: M[AR]->DR, M[AR]->IR, M[AR]<-AC
+- Arithmetic: AC+DR->AC, AC+1->AC
+- Decode: decode-IR
+
+**Machine Instructions Created (20 total):**
+AND(0xxx), ADD(1xxx), LDA(2xxx), STA(3xxx), BUN(4xxx), ISZ(6xxx),
+CLA(7800), CLE(7400), CMA(7200), CME(7100), CIR(7080), CIL(7040),
+INC(7020), SPA(7010), SNA(7008), SZA(7004), SZE(7002), HLT(7001),
+INP(F800), OUT(F400)
+
+**Result:** Machine saved as BasicComputer.cpu and tested with ADD program.
