@@ -1,0 +1,12 @@
+; Practical 6 : Multiply X by N using repeated addition
+LOOP: LDA PROD
+ADD X
+STA PROD
+ISZ CTR
+BUN LOOP
+LDA PROD
+OUT
+HLT
+X: .data 1 5
+CTR: .data 1 -3
+PROD: .data 1 0
